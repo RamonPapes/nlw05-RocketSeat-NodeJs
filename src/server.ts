@@ -1,5 +1,6 @@
 import "reflect-metadata";
-import express from "express";
+import express, { NextFunction, Request, Response, response } from "express";
+import "express-async-errors"
 import { initializeDataSource } from "./database/data-source";
 import { router } from "./routes";
 
@@ -10,6 +11,20 @@ initializeDataSource()
         app.use(express.json());
 
         app.use(router);
+
+        app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+            if (err instanceof Error) {
+                return res.status(400).json({
+                    error: err.message
+                })
+            }
+            else {
+                response.status(500).json({
+                    status: "error",
+                    message: "Internal Server Error"
+                })
+            }
+        })
 
         app.listen(3000, () => {
             console.log(`Server is running`);
