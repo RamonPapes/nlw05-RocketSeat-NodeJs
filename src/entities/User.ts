@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm"
-import { v4 as uuid } from "uuid" 
+import { v4 as uuid } from "uuid"
 
 @Entity("users")
 class User {
@@ -8,22 +8,22 @@ class User {
     readonly id: string;
 
     @Column()
-    name:string;
+    name: string;
 
     @Column()
-    email:string;
+    email: string;
 
     @Column()
     admin: boolean;
 
     @CreateDateColumn()
-    created_at:Date;
+    created_at: Date;
 
     @UpdateDateColumn()
     updated_at: Date;
 
-    constructor(){
-        if(!this.id){
+    constructor() {
+        if (!this.id) {
             this.id = uuid();
         }
     }
