@@ -13,11 +13,11 @@ export const AppDataSource = new DataSource({
     entities: ["src/entities/*.ts"],
     migrations: ["src/database/migrations/*.ts"],
     subscribers: [],
-    extra: {
-        authPlugins: {
-            mysql_native_password: () => require('mysql2/lib/auth_plugins').authPlugin('mysql_native_password'),
-        },
-    },
+    // extra: {
+    //     authPlugins: {
+    //         mysql_native_password: () => require('mysql2/lib/auth_plugins').authPlugin('mysql_native_password'),
+    //     },
+    // },
 });
 
 export const initializeDataSource = async () => {

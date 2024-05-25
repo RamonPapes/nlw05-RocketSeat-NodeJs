@@ -14,6 +14,9 @@ importers:
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
+      class-transformer:
+        specifier: ^0.5.1
+        version: 0.5.1
       express:
         specifier: ^4.19.2
         version: 4.19.2
@@ -45,6 +48,9 @@ importers:
       '@types/jsonwebtoken':
         specifier: ^9.0.6
         version: 9.0.6
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
       '@types/uuid':
         specifier: ^9.0.8
         version: 9.0.8
@@ -236,6 +242,9 @@ packages:
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
+
+  class-transformer@0.5.1:
+    resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
 
   cli-highlight@2.1.11:
     resolution: {integrity: sha512-9KDcoEVwyUXrjcJNvHD0NFc/hiwe/WPVYIleQh2O1N2Zro5gWJZ/K+3DGn8w8P/F6FxOgzyC5bxDyHIgCSPhGg==}
@@ -1200,6 +1209,8 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  class-transformer@0.5.1: {}
 
   cli-highlight@2.1.11:
     dependencies:

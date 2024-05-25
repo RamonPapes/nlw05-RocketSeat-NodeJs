@@ -1,5 +1,6 @@
 import { UserRepository } from "../repositories/UserRepository";
 import { hash } from "bcryptjs";
+import { instanceToPlain } from "class-transformer";
 
 interface IUserRequest {
     name: string;
@@ -30,17 +31,7 @@ class CreateUserService {
 
         await UserRepository.save(user);
 
-        const userWhithoutMetadata = {
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            admin: user.admin,
-            created_at: user.created_at,
-            updated_at: user.updated_at,
-        }
-
-
-        return userWhithoutMetadata;
+        return instanceToPlain(user);
     }
 }
 
