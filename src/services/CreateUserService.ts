@@ -8,7 +8,6 @@ interface IUserRequest {
 
 class CreateUserService {
     async execute({ name, email, admin }: IUserRequest) {
-        console.log("Email:", email);
         if (!email) {
             throw new Error("Email incorrect");
         }
